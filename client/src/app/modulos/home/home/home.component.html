@@ -1,0 +1,136 @@
+<div class="container">
+    <div class="section">
+
+        <!--   Icon Section   -->
+        <div class="row">
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center light-blue-text"><i class="large material-icons">forum</i></h2>
+                    <h5 class="center">MISIÓN</h5>
+
+                    <p align="justify" class="light">Brindar un servicio de asesoría inmobiliaria personalizada
+                        orientada a cuidar el patrimonio de nuestros clientes, con ética y profesionalismo,
+                        proporcionando a nuestros clientes asesoría inmobiliaria personalizada e integral, con ética,
+                        honestidad y discreción, siempre orientados al servicio personalizado en todas las etapas de
+                        nuestra intervención en la venta, compra o alquiler, basados en nuestra experiencia y
+                        capacitación en el sector.</p>
+                </div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center light-blue-text"><i class="large material-icons">group_work</i></h2>
+                    <h5 class="center">VISIÓN</h5>
+
+                    <p align="justify" class="light">Ser la mejor alternativa para quienes quieren la ayuda de un
+                        profesional
+                        inmobiliario, desde una relación cercana y resolutiva, ofreciendo las propuestas más
+                        innovadoras.
+                        Que nuestros clientes se sientan plenamente acompañados y asesorados durante todo el proceso de
+                        compra de una propiedad, para mejorar su calidad de vida.</p>
+                </div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center light-blue-text"><i class="large material-icons">settings</i></h2>
+                    <h5 class="center">VALORES</h5>
+
+                    <p align="justify" class="light">Trabajo en equipo: fomentamos la participación de todos para lograr
+                        un objetivo
+                        común, compartiendo información y conocimientos.
+                        Conducta ética: actuamos con profesionalidad, integridad moral, lealtad y respeto a las
+                        personas.
+                        Orientación al cliente: centramos nuestro esfuerzo en la satisfacción del cliente, aportando
+                        soluciones competitivas y de calidad.
+                        Innovación: promovemos mejoras continuas e innovación para alcanzar la máxima calidad desde
+                        criterios de rentabilidad.
+                        Transparencia: Actuando coherentemente con información abierta y oportuna</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>
+            Formulario de contacto
+        </h2>
+        <form class="col s12" [formGroup]="emailFormGroup" (ngSubmit)="sendMail()">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input formControlName="nombre" id="nombre" type="text" class="validate">
+                    <label for="nombre" style="color:#039be5;">Nombre</label>
+                </div>
+                <div class="errorContainer" *ngIf="(nombre.touched || nombre.dirty) && nombre.invalid">
+                    <div *ngIf="nombre.errors.required" class="card-panel orange">
+                        Este campo es requerido!
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    <input formControlName="apellido" id="apellido" type="text" class="validate">
+                    <label for="Apellido" style="color:#039be5;">Apellido</label>
+                </div>
+                <div class="errorContainer" *ngIf="(apellido.touched || apellido.dirty) && apellido.invalid">
+                    <div *ngIf="apellido.errors.required" class="card-panel orange">
+                        Este campo es requerido!
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea formControlName="mensaje" id="mensaje" class="materialize-textarea"></textarea>
+                    <label for="mensaje" style="color:#039be5;">Mensaje</label>
+                </div>
+                <div class="errorContainer" *ngIf="(mensaje.touched || mensaje.dirty) && mensaje.invalid">
+                    <div *ngIf="mensaje.errors.required" class="card-panel orange">
+                        Este campo es requerido!
+                    </div>
+                    <div *ngIf="mensaje.errors.maxlength" class="card-panel orange">
+                        Este campo no debe contener más de 200 caracteres!
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <select formControlName="asunto" id="asunto">
+                        <option value="" disabled selected>Seleccione el tipo</option>
+                        <option value="Compra">Compra</option>
+                        <option value="Aquiler">Alquiler</option>
+                    </select>
+                    <label style="color:#039be5;">Asunto del mensaje</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input formControlName="emailAddresses" id="emailAddresses" type="email" class="validate">
+                    <label for="emailAddresses" style="color:#039be5;">Email</label>
+                </div>
+                <div class="errorContainer"
+                    *ngIf="(emailAddresses.touched || emailAddresses.dirty) && emailAddresses.invalid">
+                    <div *ngIf="emailAddresses.errors.required" class="card-panel orange">
+                        Este campo es requerido!
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <button class="btn light-blue darken-4" type="submit">
+                        Enviar
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+                <div *ngIf="alertMessage">
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <div class="card black darken-1">
+                                    <div class="card-content white-text">
+                                        <p>{{ alertMessage }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </form>
+    </div>
+</div>

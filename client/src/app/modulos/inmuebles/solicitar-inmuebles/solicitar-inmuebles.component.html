@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>Solicitud Nueva</h2>
+    <form [formGroup]="solicitudNueva" (ngSubmit)="saveNewSolicitud()" class="col s12">
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input formControlName="comentarios" id="comentarios" type="text" class="validate">
+                <label for="Comentarios" style="color:#039be5;"></label>
+            </div>
+
+        </div>
+
+        <div class="row" align="center">
+            <button class="btn light-blue darken-4" type="submit">
+                Enviar Solicitud
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </form>
+
+</div>

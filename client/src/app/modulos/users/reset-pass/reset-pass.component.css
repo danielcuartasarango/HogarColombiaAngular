@@ -1,0 +1,8 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+.z-depth-3{
+    display: flex;
+    justify-content: center;
+}

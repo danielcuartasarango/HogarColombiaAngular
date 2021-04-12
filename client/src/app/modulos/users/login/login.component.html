@@ -1,0 +1,40 @@
+<div class="row center">
+  <div class="z-depth-3 y-depth-3 x-depth-3 grey green-text lighten-4 row"
+    style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px; margin-top: 100px;">
+    <div class="section"></div>
+    <div class="section">
+      <strong>Inicio de sesión</strong>
+    </div>
+    <div class="section"><i class="mdi-alert-error red-text"></i></div>
+    <div class='row'>
+      <div class='input-field col s12'>
+        <input [(ngModel)]="email" class='validate' type="text" name='username' id='email' required />
+        <label for='email'>Usuario</label>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='input-field col m12'>
+        <input [(ngModel)]="password" class='validate' type='password' name='password' id='password' required />
+        <label for='password'>Contraseña</label>
+      </div>
+      <label>
+        <a routerLink="/user/reset-password"><b>Olvidó la contraseña?</b></a>
+      </label>
+    </div>
+    <div class="row">
+      <div *ngIf="alertMessage">
+          <h6>{{alertMessage}}</h6>
+
+      </div>
+    </div>
+    <div class="row">
+      <re-captcha (resolved)="resolved($event)" siteKey="6LfSMcwUAAAAANZ_IrDoaLP6UMLXlUVYaHV2lDqO"></re-captcha>
+    </div>
+    <div class="row">
+      <div class='col s3'></div>
+      <button *ngIf="recaptcha.length > 0" (click)="onLogin()" name='btn_login'
+        class='col s6 btn btn-small white black-text  waves-effect z-depth-1 y-depth-1'>Login</button>
+      <div class='col s3'></div>
+    </div>
+  </div>
+</div>

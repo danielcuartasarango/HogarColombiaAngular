@@ -1,0 +1,11 @@
+#card {
+    display: felx;
+    height: 30%;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+#image {
+    height: 300px;
+    width: 300px;
+}

@@ -1,0 +1,102 @@
+<div class="container">
+    <h2>Crear Nuevo Inmueble</h2>
+    <form [formGroup]="nuevoInmuebleGroup" (ngSubmit)="saveNewInmueble()" class="col s12">
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input formControlName="idasesor" id="idasesor" type="text" class="validate">
+                <label for="idasesor" style="color:#039be5;">Id Asesor</label>
+            </div>
+            <div class="errorContainer" *ngIf="(idasesor.touched || idasesor.dirty) && idasesor.invalid">
+                <div *ngIf="idasesor.errors.required" class="card-panel orange">
+                    Este campo es requerido!
+                </div>
+            </div>
+            <div class="input-field col s6">
+                <input formControlName="tipo" id="tipo" type="text" class="validate">
+                <label for="tipo" style="color:#039be5;">Tipo</label>
+            </div>
+            <div class="errorContainer" *ngIf="(tipo.touched || tipo.dirty) && tipo.invalid">
+                <div *ngIf="tipo.errors.required" class="card-panel orange">
+                    Este campo es requerido!
+                </div>
+            </div>
+            <div class="input-field col s6">
+                <input formControlName="estado" id="estado" type="text" class="validate">
+                <label for="estado" style="color:#039be5;">Estado</label>
+            </div>
+            <div class="errorContainer" *ngIf="(estado.touched || estado.dirty) && estado.invalid">
+                <div *ngIf="estado.errors.required" class="card-panel orange">
+                    Este campo es requerido!
+                </div>
+            </div>
+            <div class="input-field col s6">
+                <input formControlName="dir" id="dir" type="text" class="validate">
+                <label for="dir" style="color:#039be5;">Direccion</label>
+            </div>
+            <div class="errorContainer" *ngIf="(dir.touched || dir.dirty) && dir.invalid">
+                <div *ngIf="dir.errors.required" class="card-panel orange">
+                    Este campo es requerido!
+                </div>
+            </div>
+
+            <div class="input-field col s6">
+                <input formControlName="estrato" id="estrato" type="text" class="validate">
+                <label for="estrato" style="color:#039be5;">Estrato</label>
+            </div>
+            <div class="errorContainer" *ngIf="(estrato.touched || estrato.dirty) && estrato.invalid">
+                <div *ngIf="estrato.errors.required" class="card-panel orange">
+                    Este campo es requerido!
+                </div>
+            </div>
+
+            <div class="input-field col s6">
+                <input formControlName="dept" id="dept" type="text" class="validate">
+                <label for="dept" style="color:#039be5;">Departamento</label>
+            </div>
+            <div class="errorContainer" *ngIf="(dept.touched || dept.dirty) && dept.invalid">
+                <div *ngIf="dept.errors.required" class="card-panel orange">
+                    Este campo es requerido!
+                </div>
+            </div>
+
+            <div class="input-field col s6">
+                <input formControlName="city" id="city" type="text" class="validate">
+                <label for="city" style="color:#039be5;">Ciudad</label>
+            </div>
+            <div class="errorContainer" *ngIf="(city.touched || city.dirty) && city.invalid">
+                <div *ngIf="city.errors.required" class="card-panel orange">
+                    Este campo es requerido!
+                </div>
+            </div>
+
+            <div class="input-field col s6">
+                <input formControlName="categ" id="categ" type="text" class="validate">
+                <label for="categ" style="color:#039be5;">Categoria</label>
+            </div>
+            <div class="errorContainer" *ngIf="(categ.touched || categ.dirty) && categ.invalid">
+                <div *ngIf="categ.errors.required" class="card-panel orange">
+                    Este campo es requerido!
+                </div>
+            </div>
+
+            <div class="input-field col s12">
+                <input formControlName="image" id="image" type="text" class="validate">
+                <label for="image" style="color:#039be5;">Link Foto</label>
+            </div>
+            <div class="errorContainer" *ngIf="(image.touched || image.dirty) && image.invalid">
+                <div *ngIf="image.errors.required" class="card-panel orange">
+                    Este campo es requerido!
+                </div>
+            </div>
+        </div>
+
+        <div class="row" align="center">
+            <button class="btn light-blue darken-4" type="submit">
+                Registrar
+                <i class="material-icons right">save</i>
+            </button>
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+    <form class="col s12" [formGroup]="emailSoli" (ngSubmit)="sendMail()">
+        <div>
+            <strong>Respondiendo... {{solisModel.IDusario}}
+            </strong>
+            <br>
+            <textarea formControlName="textarea" rows="5" cols="3"></textarea>
+            <td>
+                <button class="btn light-blue darken-4" type="submit">Enviar Respuesta
+            <i class="material-icons right">send</i>
+        </button>
+        </div>
+    </form>
+</div>

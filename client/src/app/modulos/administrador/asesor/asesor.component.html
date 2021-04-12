@@ -1,0 +1,73 @@
+<div class="container">
+    <table class="response-table">
+        <thead>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Apellido
+            </th>
+            <th>
+                Teléfono
+            </th>
+            <th>
+                Dirección
+            </th>
+            <th>
+                Cédula
+            </th>
+            <th>
+                Rol
+            </th>
+        </thead>
+        <tbody>
+            <!--aca va el for -->
+            <tr *ngFor="let u of usersList">
+                <td>
+                    {{u.name}}
+                </td>
+                <td>
+                    {{u.lastName}}
+                </td>
+                <td>
+                    {{u.phone}}
+                </td>
+                <td>
+                    {{u.address}}
+                </td>
+                <td>
+                    {{u.idNumber}}
+                </td>
+                <td>
+                    {{u.rol}}
+                </td>
+                <td *ngIf="u.rol == 1; else elseBlock">Asesor
+                </td>
+                <ng-template #elseBlock>Usuario</ng-template>
+                <td>
+                    <button class="btn light-blue darken-4" routerLink="/admin/editar-asesor/{{u.id}}">Editar
+                        <i class="material-icons right">edit</i>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn light-blue darken-4" (click)="ChangeConfirmationButtons(u.id)">Eliminar
+                        <i class="material-icons right">delete</i>
+                    </button>
+                </td>
+                <td>
+                    <a *ngIf='showConfirmationButtons; else deleteConfirmationTemplate' (click)="ChangeConfirmationButtons(u.id)" class="waves-effect waves-light btn red">
+                        <i class="material-icons left">delete</i>Eliminar</a>
+                    <ng-template #deleteConfirmationTemplate>
+                        <div *ngIf="idToShowButtons == u.id">
+                            <a class="waves-effect waves-light btn green" (click)="deleteUser(u.id)">
+                                <i class="material-icons left">save</i>Confirmar</a>&nbsp;
+                            <a class="waves-effect waves-light btn red" (click)="ChangeConfirmationButtons('')">
+                                <i class="material-icons left">cancel</i>Cancelar</a>
+                        </div>
+                    </ng-template>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

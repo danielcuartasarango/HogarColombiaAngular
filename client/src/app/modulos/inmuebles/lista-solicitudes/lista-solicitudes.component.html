@@ -1,0 +1,41 @@
+<div class="container">
+    <table class="response-table">
+        <thead>
+            <th>
+                Tipo Inmueble
+            </th>
+            <th>
+                Comentarios
+            </th>
+            <th>
+                ID Asesor
+            </th>
+        </thead>
+        <tbody>
+            <!--aca va el for -->
+            <tr *ngFor="let s of listaSolicitudes">
+                <td>
+                    {{s.TipoInmueble}}
+                </td>
+                <td>
+                    {{s.Comentarios}}
+                </td>
+                <td>
+                    {{s.IDvendedor}}
+                </td>
+                <td>
+                    <button routerLink="/inmuebles/responder/solicitud/{{s.id}}" class="btn light-blue darken-4" type="submit">Responder
+                    <i class="material-icons right">save</i>
+                </button>
+                </td>
+                <td>
+                    <button routerLink="/inmuebles/borrar/solicitud/{{s.id}}" class="btn light-blue darken-4" type="submit">Rechazar
+                    <i class="material-icons right">delete</i>
+                </button>
+
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

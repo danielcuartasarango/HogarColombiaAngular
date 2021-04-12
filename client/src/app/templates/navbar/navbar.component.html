@@ -1,0 +1,27 @@
+<nav>
+    <div class="nav-wrapper light-blue darken-4" id="navbar">
+        <a routerLink="/home" class="brand-logo">Hogar Colombia</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li *ngIf="!userLogged"><a routerLink="/user/login">Ingresar</a></li>
+            <li *ngIf="!userLogged"><a routerLink="/client/register">Registro</a></li>
+            <li><a routerLink="/inmuebles/home-i">Tienda</a></li>
+            <li *ngIf="userLogged"><a routerLink="/user/logout">Cerrar Sesión</a>
+            <li *ngIf="userLogged"><a routerLink="/inmuebles/create-inmueble">Nuevo Inmueble</a></li>
+            <li *ngIf="userLogged"><a routerLink="/inmuebles/asesor/lista-solicitudes">Lista Solicitudes</a></li>
+            <li *ngIf="userLogged"><a routerLink="admin/asesor">Editar Asesor</a></li>
+        </ul>
+    </div>
+    <div *ngIf="userLogged">
+        <h6><strong>En sesión: {{userName}}</strong></h6>
+    </div>
+</nav>
+<ul class="sidenav" id="mobile-demo">
+    <li *ngIf="!userLogged"><a routerLink="/user/login">Ingresar</a></li>
+    <li *ngIf="!userLogged"><a routerLink="/client/register">Registro</a></li>
+    <li><a routerLink="/inmuebles/home-i">Tienda</a></li>
+    <li *ngIf="userLogged"><a routerLink="/user/logout">Cerrar Sesión</a>
+    <li *ngIf="userLogged"><a routerLink="/inmuebles/create-inmueble">Nuevo Inmueble</a></li>
+    <li *ngIf="userLogged"><a routerLink="/inmuebles/asesor/lista-solicitudes">Lista Solicitudes</a></li>
+    <li *ngIf="userLogged"><a routerLink="admin/asesor">Editar Asesor</a></li>
+</ul>

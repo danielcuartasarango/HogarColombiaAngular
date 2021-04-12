@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <input [(ngModel)]="usuario.id" type="hidden" id="id" />
+        <div class="row">
+            <div class="input-fiel col s3">
+                <label class="active" for="code">Código</label>
+                <input [(ngModel)]="usuario.name" id="codigo" type="text" class="validate">
+            </div>
+            <div class="input-field col s9">
+                <label class="active" for="code">Nombre</label>
+                <input [(ngModel)]="usuario.email" id="nombre" type="text" class="validate">
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s9">
+                <label class="active" for="code">Productos</label>
+                <input [(ngModel)]="usuario.lastName" id="productos" type="text" class="validate">
+            </div>
+            <div class="input-field col s3">
+                <label class="active" for="rol">Rol</label>
+                <input [(ngModel)]="usuario.rol" id="rol" type="text" class="validate">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <a class="waves-effect waves-light btn green" (click)="updateUser()">
+                    <i class="material-icons right">save</i> Actualizar
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

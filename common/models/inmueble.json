@@ -1,0 +1,47 @@
+{
+  "name": "Inmueble",
+  "plural": "Inmuebles",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "IDasesor": {
+      "type": "string",
+      "required": true
+    },
+    "Tipo": {
+      "type": "string",
+      "required": true
+    },
+    "Estado": {
+      "type": "string",
+      "required": true
+    },
+    "Direccion": {
+      "type": "string",
+      "required": true
+    },
+    "Estrato": {
+      "type": "string",
+      "required": true
+    },
+    "Departamento": {
+      "type": "string",
+      "required": true
+    },
+    "Ciudad": {
+      "type": "string",
+      "required": true
+    },
+    "Categoria": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
